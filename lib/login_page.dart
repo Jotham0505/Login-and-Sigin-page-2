@@ -35,24 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Column(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey[600]?.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.symmetric(vertical: 20),
-                            border: InputBorder.none,
-                            hintText: ' Email',
-                            prefixIcon: Icon(Icons.email, color: Colors.white,size: 30,),
-                            hintStyle: kBodyText,
-                          ),
-                          style: kBodyText,
-                          keyboardType: TextInputType.emailAddress,
-                          textInputAction: TextInputAction.next,
-                        ),
-                      ),
+                      Textinput(),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.grey[600]?.withOpacity(0.5),
@@ -79,6 +62,37 @@ class _LoginPageState extends State<LoginPage> {
           ),
         )
       ],
+    );
+  }
+}
+
+class Textinput extends StatelessWidget {
+  const Textinput({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[600]?.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: TextField(
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 20),
+            border: InputBorder.none,
+            hintText: ' Email',
+            prefixIcon: Icon(Icons.email, color: Colors.white,size: 30,),
+            hintStyle: kBodyText,
+          ),
+          style: kBodyText,
+          keyboardType: TextInputType.emailAddress,
+          textInputAction: TextInputAction.next,
+        ),
+      ),
     );
   }
 }
